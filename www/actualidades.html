@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<!--[if IEMobile 7 ]>    <html class="no-js iem7"> <![endif]-->
+<!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+        <meta http-equiv="content-type" content="text/html;charset=iso-8859-1" />
+        <title>Santamarina Steta</title>
+		<meta name="author" content="www.redbai.com" />
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="cleartype" content="on">
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="#">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="#">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="#">
+        <link rel="apple-touch-icon-precomposed" href="#">
+        <link rel="shortcut icon" href="favicon.ico">
+        
+        <!-- Tile icon for Win8 (144x144 + tile color) -->
+        <meta name="msapplication-TileImage" content="#">
+        <meta name="msapplication-TileColor" content="#222222">
+        
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
+		<link type="text/css" rel="stylesheet" href="css/style.css" />
+
+
+	
+	</head>
+	<body class="o-page">
+		<div id="page">
+			<!-- Header -->
+			<div id="header">
+				<span id="Logo" class="svg">
+					<img src="img/logo-s-s.jpg">
+				</span>
+		  	</div>
+            <div id="tit" class="legales">
+			<div class="subHeader"><a href="#menu" class="menubtn"></a><a href="index.html" class="subHactive subH">ES</a>  <a href="index-eng.html" class="subH subHpo">EN</a><a class="backBtn" href="javascript:history.back();"></a></div>
+		  	</div>
+
+			
+		<div id="content"></div>		
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js" type="text/javascript"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
+
+
+		<script id="article-template" type="text/template">
+		{{#posts}}
+		<article>
+		<h1 style="color:#999;"><a href="{{url}}">{{title}}</a></h1>
+					<div class="a-meta">
+						<i class="i-calendar i-small"></i>{{date}}
+					</div>
+		</article>
+		{{/posts}}
+		</script>
+
+
+
+<script>
+$(function() {
+	$.getJSON ('http://www.s-s.mx/site/?json=get_category_posts&id=74' ,
+	function(data) {
+		var template = $('#article-template').html();
+		var info = Mustache.to_html(template, data);
+		$('#content').html(info);
+	});
+});
+</script>
+
+
+			
+			<!-- Social Icons -->
+			<div class="socialMedia scl-grey">
+				© Santamarina y Steta. Todos los Derechos Reservados.
+			</div>
+			
+			<!-- Menu navigation -->
+			<nav id="menu">
+				<ul>
+					<li>
+						<a href="index.html">
+							<i class="icon-home i-small"></i>Inicio
+						</a>
+					</li>
+					<li>
+						<a href="noticias.html">
+							<i class="icon-list-alt i-small"></i>Noticias
+						</a>
+					</li>
+					<li>
+						<a href="boletines.html">
+							<i class="icon-file-text-alt i-small"></i>Boletines
+						</a>
+					</li>
+					<li>
+						<a href="articulos.html">
+							<i class="icon-inbox i-small"></i>Artículos
+						</a>
+					</li>
+					<li class="Selected">
+						<a href="actualidades.html">
+							<i class="icon-legal i-small"></i>Actualidades Legales
+						</a>
+					</li>
+					<li>
+						<a href="contacto.html">
+							<i class="icon-envelope i-small"></i>Contacto
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.mmenu.min.all.js"></script>
+		<script type="text/javascript" src="js/o-script.js"></script>
+	  	<script type="text/javascript" src="js/handlebars-v2.0.0.js"></script>
+	    <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+      
+	</body>
+</html>
